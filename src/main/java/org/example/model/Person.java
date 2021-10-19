@@ -12,9 +12,9 @@ package org.example.model;
     //Constructor
     public Person(int id,String firstName,String lastName,String email){
         this.personId=personId;
-        this.firstName=firstName;
-        this.lastName=firstName;
-        this.email=email;
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
     }
 
     public String getSummary(int personId,String firstName,String lastName,String email){
@@ -36,6 +36,7 @@ package org.example.model;
     }
 
     public void setFirstName(String firstName) {
+        if (firstName == null) throw new RuntimeException("Firstname was null");
         this.firstName = firstName;
     }
 
@@ -44,10 +45,12 @@ package org.example.model;
     }
 
     public void setLastName(String lastName) {
+        if (lastName==null) throw new RuntimeException("Lastname was null");
         this.lastName = lastName;
     }
 
     public String getEmail() {
+        if (email == null) throw new RuntimeException("Email was null");
         return email;
     }
 
