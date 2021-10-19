@@ -16,19 +16,13 @@ public class App
 {
     public static void main( String[] args )
     {
-        Person person1 = new Person();
-        System.out.println(person1.getSummary(1,"Haris","Gusinac","hgusinac@gmail.com"));
-        System.out.println("----------------------");
+        Person person1 = new Person(5,"Haris","Gusinac","hgusinac@gmail.com");
 
+        TodoItem todoItem = new TodoItem(1,"Work","Code Java", LocalDate.of(2021,11,1),true,person1);
 
-        TodoItem todoItem = new TodoItem(1,"Work","Code Java", LocalDate.now(),true,person1);
         System.out.println(todoItem.getSummary());
-        System.out.println("----------------------");
 
-
-        TodoItemTask todoItemTask = new TodoItemTask(1,true,todoItem,person1);
-        System.out.println(todoItemTask.getSummary());
-        System.out.println("----------------------");
+        System.out.println(todoItem.isOverdue());
 
     }
 }

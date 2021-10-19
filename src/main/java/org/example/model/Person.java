@@ -12,7 +12,7 @@ public class Person {
     }
 
     //Constructor
-    public Person(int id,String firstName,String lastName,String email){
+    public Person(int personId,String firstName,String lastName,String email){
 
 
         this.personId=personId;
@@ -22,8 +22,8 @@ public class Person {
     }
 
 
-    public String getSummary(int personId, String firstName, String lastName, String email){
-        return "Summary of Person: " + "\n PersonId: " + personId + "\n FirstName: " + firstName + "\n lastName: " + lastName + "\n email: " + email;
+    public String getSummary(){
+        return "\nPersonId: " + personId + "\nFirstName: " + firstName + "\nLastName: " + lastName + "\nEmail: " + email;
 
     }
 

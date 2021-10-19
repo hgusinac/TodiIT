@@ -18,7 +18,7 @@ public class TodoItemTask {
 
     public String getSummary(){
 
-        return "Id:" + id +"\nAssigned: " + assigned + "\nTodoItem:" +todoItem +"\nPerson: " + assignee;
+        return "Id:" + id +"\nAssigned: " + assigned + "\nTodoItem:" +todoItem.getSummary() +"\nPerson: " + assignee.getSummary();
     }
 
     public int getId() {

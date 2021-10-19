@@ -15,37 +15,34 @@ public class TodoItem {
 
     public TodoItem() {}
 
+
     public TodoItem(int id, String title, String taskDescription,LocalDate deadLine, boolean done, Person creator) {
         this.id = id;
         setTitle(title);
         setTaskDescription(taskDescription);
         setDeadLine(deadLine);
-        setDone(done);
+        this.done = done;
         setCreator(creator);
     }
 
-    public String getSummary(){
 
-        return "Id:" + id + "\nTitle: "+title+"\nDescription: "+ taskDescription+"\nDone: "+done + "\nCreator: " +creator;
 
-    }
-    /*
     public boolean isOverdue(){
 
-        if (LocalDateTime.now() > this.deadLine){
+        if (LocalDate.now().equals(deadLine)){
             return true;
+        }else{
+            return false;
+
         }
-        return false;
-    }*/
+    }
 
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
 
     public String getTitle() {
         return title;
@@ -70,6 +67,7 @@ public class TodoItem {
 
     public void setDeadLine(LocalDate deadLine) {
         if (deadLine == null) throw new RuntimeException("Deadline was null");
+
         this.deadLine = deadLine;
 
     }
@@ -78,15 +76,25 @@ public class TodoItem {
         return done;
     }
 
-    public void setDone(boolean done) {
-        this.done = done;
-    }
 
     public Person getCreator() {
         return creator;
     }
 
     public void setCreator(Person creator) {
+        if (creator ==null) throw new RuntimeException("Creator was null");
         this.creator = creator;
+    }
+    public String getSummary(){
+
+        return "TodoItem: " +
+                "\nId:" + id +
+                "\nTitle: "+title+
+                "\nDescription: "+ taskDescription+
+                "\nDeadline: " + deadLine +
+                "\nIsOverdue: "+ isOverdue()+
+                "\nDone: "+done +
+                "\nCreator: "  +creator.getSummary();
+
     }
 }
