@@ -29,7 +29,7 @@ public class TodoItem {
 
     public boolean isOverdue(){
 
-        if (LocalDate.now().equals(deadLine)){
+        if (LocalDate.now().isAfter(deadLine)){
             return true;
         }else{
             return false;
@@ -87,8 +87,8 @@ public class TodoItem {
     }
     public String getSummary(){
 
-        return "TodoItem: " +
-                "\nId:" + id +
+        return
+
                 "\nTitle: "+title+
                 "\nDescription: "+ taskDescription+
                 "\nDeadline: " + deadLine +

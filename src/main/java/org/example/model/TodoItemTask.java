@@ -11,25 +11,24 @@ public class TodoItemTask {
 
     public TodoItemTask(int id, boolean assigned, TodoItem todoItem, Person assignee) {
         this.id = id;
-        this.assigned = assigned;
-        this.todoItem = todoItem;
-        this.assignee = assignee;
+        setAssigned(assigned);
+        setTodoItem(todoItem);
+        setAssignee(assignee);
     }
 
     public String getSummary(){
 
-        return "Id:" + id +"\nAssigned: " + assigned + "\nTodoItem:" +todoItem.getSummary() +"\nPerson: " + assignee.getSummary();
+        return "\nAssigned: " + assigned + "\nTodoItem:" +todoItem.getSummary();
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+
 
     public boolean isAssigned() {
+
         return assigned;
     }
 
