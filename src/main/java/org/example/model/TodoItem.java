@@ -13,10 +13,9 @@ public class TodoItem {
     private boolean done;
     private Person creator;
 
-    public TodoItem() {
-    }
+    public TodoItem() {}
 
-    public TodoItem(int id, String title, String description,LocalDate deadLine, boolean done, Person creator) {
+    public TodoItem(int id, String title, String taskDescription,LocalDate deadLine, boolean done, Person creator) {
         this.id = id;
         setTitle(title);
         setTaskDescription(taskDescription);
@@ -25,9 +24,9 @@ public class TodoItem {
         setCreator(creator);
     }
 
-    public String getSummary(int id,String title,String description, Boolean done, Person creator){
+    public String getSummary(){
 
-        return "Id:" + id + " Title: "+title+" Description: "+description+" Done: "+done + " Creator: " +creator;
+        return "Id:" + id + "\nTitle: "+title+"\nDescription: "+ taskDescription+"\nDone: "+done + "\nCreator: " +creator;
 
     }
     /*

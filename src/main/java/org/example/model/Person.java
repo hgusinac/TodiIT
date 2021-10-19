@@ -1,31 +1,31 @@
 package org.example.model;
 
-    public class Person {
+import java.util.UUID;
+
+public class Person {
     private int personId;
     private String firstName;
     private String lastName;
     private String email;
 
-    public Person(){}
-
+    public Person() {
+    }
 
     //Constructor
     public Person(int id,String firstName,String lastName,String email){
+
+
         this.personId=personId;
         setFirstName(firstName);
         setLastName(lastName);
         setEmail(email);
     }
 
-    public String getSummary(int personId,String firstName,String lastName,String email){
 
-      return "Summary of Person:" + "\n PersonId:" + personId + "\n FirstName:" + firstName + "\n lastName:" + lastName + "\n email:" + email;
-
+    public String getSummary(int personId, String firstName, String lastName, String email){
+        return "Summary of Person: " + "\n PersonId: " + personId + "\n FirstName: " + firstName + "\n lastName: " + lastName + "\n email: " + email;
 
     }
-
-
-
 
     public int getId() {
         return personId;
