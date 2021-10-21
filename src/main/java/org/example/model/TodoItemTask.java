@@ -34,8 +34,9 @@ public class TodoItemTask {
     }
 
     public void setAssigned(boolean assigned) {
-        if (!assigned)throw new RuntimeException("Assigned was null");
-        this.assigned = assigned;
+
+        this.assigned=assigned;
+
     }
 
     public TodoItem getTodoItem() {
