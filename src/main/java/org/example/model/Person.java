@@ -22,10 +22,7 @@ public class Person {
     }
 
 
-    public String getSummary(){
-        return "\nPersonId: " + personId + "\nFirstName: " + firstName + "\nLastName: " + lastName + "\nEmail: " + email;
 
-    }
 
     public int getId() {
         return personId;
@@ -49,12 +46,18 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        if (email == null) throw new RuntimeException("Email was null");
-        return email;
-    }
+    public String getEmail() {return email;}
 
     public void setEmail(String email) {
+        if (email == null) throw new RuntimeException("Email was null");
         this.email = email;
+    }
+
+    public String getSummary(){
+        return "\nPersonId: " + personId +
+                "\nFirstName: " + firstName +
+                "\nLastName: " + lastName +
+                "\nEmail: " + email;
+
     }
 }

@@ -10,6 +10,7 @@ public class TodoItemTask {
     }
 
     public TodoItemTask(int id, boolean assigned, TodoItem todoItem, Person assignee) {
+        if (id == 0) throw new RuntimeException("Id was 0 ");
         this.id = id;
         setAssigned(assigned);
         setTodoItem(todoItem);
@@ -18,7 +19,7 @@ public class TodoItemTask {
 
     public String getSummary(){
 
-        return "\nAssigned: " + assigned + "\nTodoItem:" +todoItem.getSummary();
+        return "\nAssigned: " + assigned + "\nTodoItem:" +todoItem +"\nPerson" + assigned;
     }
 
     public int getId() {
@@ -33,6 +34,7 @@ public class TodoItemTask {
     }
 
     public void setAssigned(boolean assigned) {
+        if (!assigned)throw new RuntimeException("Assigned was null");
         this.assigned = assigned;
     }
 

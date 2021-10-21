@@ -31,10 +31,10 @@ public class TodoItem {
 
         if (LocalDate.now().isAfter(deadLine)){
             return true;
-        }else{
+        }
             return false;
 
-        }
+
     }
 
 
@@ -73,6 +73,10 @@ public class TodoItem {
     }
 
     public boolean isDone() {
+        if (LocalDate.now().isBefore(deadLine)) {
+
+            return true;
+        }
         return done;
     }
 
