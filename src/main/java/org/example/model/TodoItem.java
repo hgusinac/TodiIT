@@ -27,14 +27,10 @@ public class TodoItem {
 
 
 
-    public boolean isOverdue(){
+    public boolean isOverdue() {
 
-        if (LocalDate.now().isAfter(deadLine)){
-            return true;
-        }
-            return false;
-
-
+        LocalDate check = LocalDate.now();
+        return (check.isAfter(deadLine) || (check.isEqual(deadLine)));
     }
 
 
