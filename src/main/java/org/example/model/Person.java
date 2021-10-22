@@ -1,5 +1,7 @@
 package org.example.model;
 
+import jdk.nashorn.internal.ir.IfNode;
+
 import java.util.UUID;
 
 public class Person {
@@ -14,7 +16,7 @@ public class Person {
     //Constructor
     public Person(int personId,String firstName,String lastName,String email){
 
-
+        if (personId <=0) throw  new RuntimeException();
         this.personId=personId;
         setFirstName(firstName);
         setLastName(lastName);

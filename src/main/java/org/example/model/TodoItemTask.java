@@ -9,17 +9,23 @@ public class TodoItemTask {
     public TodoItemTask() {
     }
 
-    public TodoItemTask(int id, boolean assigned, TodoItem todoItem, Person assignee) {
+    public TodoItemTask(int id,  TodoItem todoItem, Person assignee) {
         if (id == 0) throw new RuntimeException("Id was 0 ");
         this.id = id;
-        setAssigned(assigned);
         setTodoItem(todoItem);
         setAssignee(assignee);
+        setAssigned();
+
     }
 
     public String getSummary(){
 
-        return "\nAssigned: " + assigned + "\nTodoItem:" +todoItem +"\nPerson" + assigned;
+       if (isAssigned()){
+           return assignee.getFirstName()+ " " +
+                   assignee.getLastName() + " assigned " + todoItem.getTitle();
+       }else {
+           return todoItem.getTitle() + " are not assigned";
+       }
     }
 
     public int getId() {
@@ -33,9 +39,14 @@ public class TodoItemTask {
         return assigned;
     }
 
-    public void setAssigned(boolean assigned) {
+    public void setAssigned() {
+        if (getAssignee() != null){
+            this.assigned=true;
+        }
+        else{
+            this.assigned=false;
 
-        this.assigned=assigned;
+        }
 
     }
 

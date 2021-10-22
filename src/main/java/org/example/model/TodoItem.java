@@ -21,7 +21,7 @@ public class TodoItem {
         setTitle(title);
         setTaskDescription(taskDescription);
         setDeadLine(deadLine);
-        this.done = done;
+        setDone(done);
         setCreator(creator);
     }
 
@@ -45,7 +45,7 @@ public class TodoItem {
     }
 
     public void setTitle(String title) {
-        if (title == null ) throw new RuntimeException("Title was null");
+        if (title == null || title.equals("") ) throw new RuntimeException("Title was null or empty");
         this.title = title;
     }
 
@@ -69,11 +69,10 @@ public class TodoItem {
     }
 
     public boolean isDone() {
-        if (LocalDate.now().isBefore(deadLine)) {
-
-            return true;
-        }
-        return done;
+      return done;
+    }
+    public void setDone(boolean done){
+        this.done=done;
     }
 
 
