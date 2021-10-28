@@ -12,11 +12,12 @@ public class PersonTest {
     public static final String FIRST_NAME = "Haris";
     public static final String LAST_NAME = "Gusinac";
     public static final String EMAIL = "Hg@gmail.com";
+    public static final AppUser USER = new AppUser("Haris","1234",AppRole.ROLE_APP_ADMIN);
     private Person testObject;
 
     @Before
     public void setUp() throws Exception {
-        testObject = new Person(ID, FIRST_NAME, LAST_NAME, EMAIL);
+        testObject = new Person(ID, FIRST_NAME, LAST_NAME, EMAIL, USER);
 
     }
 
@@ -36,11 +37,12 @@ public class PersonTest {
         assertEquals("\nPersonId: " + ID +
                 "\nFirstName: " + FIRST_NAME +
                 "\nLastName: " + LAST_NAME +
-                "\nEmail: " + EMAIL,testObject.getSummary());
+                "\nEmail: " + EMAIL +
+                "\n"+USER,testObject.toString());
     }
 
     @Test(expected = RuntimeException.class)
     public void null_runtime_exeption() {
-        new Person(0,null,null,null);
+        new Person(0,null,null,null,USER);
     }
 }

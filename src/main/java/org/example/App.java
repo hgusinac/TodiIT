@@ -1,10 +1,9 @@
 package org.example;
 
-import org.example.model.Person;
-import org.example.model.TodoItem;
-import org.example.model.TodoItemTask;
+import org.example.model.*;
 import sun.util.resources.LocaleData;
 
+import java.applet.Applet;
 import java.time.LocalDate;
 
 
@@ -16,11 +15,16 @@ public class App
 {
     public static void main( String[] args )
     {
-        Person person1 = new Person(5,"Haris","Gusinac","hgusinac@gmail.com");
-        Person Sven = new Person(500,"Bajro","Gusinac","bgusinac@gmail.com");
+        AppUser appUser = new AppUser("Haris","12345",AppRole.ROLE_APP_USER);
+        AppUser appUser2 = new AppUser("Sven","gunilla112",AppRole.ROLE_APP_ADMIN);
+        System.out.println(appUser2.toString());
 
-        TodoItem todoItem = new TodoItem(1,"Work","Code Java", LocalDate.of(2021,11,1),true,person1);
-        TodoItem Swim = new TodoItem(100,"Train","Swim",LocalDate.of(2010,01,01),false,Sven);
+
+        Person person = new Person(1,"Haris","Gusinac","Hg.gmail.com",new AppUser("Haris","1234",AppRole.ROLE_APP_ADMIN));
+        System.out.println(person);
+
+
+
 
 
 

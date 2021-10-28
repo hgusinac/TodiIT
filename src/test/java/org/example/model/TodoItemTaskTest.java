@@ -15,13 +15,17 @@ public class TodoItemTaskTest {
     public static final String LAST_NAME = "Gusinac";
     public static final String EMAIL = "hg@gmail.com";
 
+
+
     public static final int ID = 2;
     public static final String TITLE = "Work";
     public static final String TASK_DESCRIPTION = "Code Java";
     public static final LocalDate DEAD_LINE = LocalDate.parse("2021-12-11");
     public static final boolean DONE = false;
 
-    public static final Person CREATOR = new Person(PERSON_ID, FIRST_NAME, LAST_NAME, EMAIL);
+    public static final AppUser USER= new AppUser("Haris Gusinac","1234567",AppRole.ROLE_APP_ADMIN);
+
+    public static final Person CREATOR = new Person(PERSON_ID, FIRST_NAME, LAST_NAME, EMAIL, USER);
     public static final TodoItem todoItem = new TodoItem(ID, TITLE, TASK_DESCRIPTION, DEAD_LINE, DONE, CREATOR);
     public static final TodoItem TODO_ITEM = todoItem;
     public static final int TODO_ITEM_TASK_ID = 3;

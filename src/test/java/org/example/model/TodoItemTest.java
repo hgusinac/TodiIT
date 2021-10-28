@@ -15,7 +15,9 @@ public class TodoItemTest {
     public static final String TASK_DESCRIPTION = "Code Java";
     public static final LocalDate DEAD_LINE = LocalDate.parse("2021-11-01");
     public static final boolean DONE = false;
-    public static final Person CREATOR = new Person(1,"Haris","Gusinac","Hgusinac@gmail.com");
+
+    public static final AppUser USER = new AppUser("Haris","1234",AppRole.ROLE_APP_ADMIN);
+    public static final Person CREATOR = new Person(1,"Haris","Gusinac","Hgusinac@gmail.com", USER);
     private TodoItem testObject;
     @Before
     public void setUp()  {
@@ -67,7 +69,7 @@ public class TodoItemTest {
                 "\nDeadline: " + DEAD_LINE +
                 "\nIsOverdue: "+ testObject.isOverdue()+
                 "\nDone: "+DONE +
-                "\nCreator: "  +CREATOR.getSummary();
+                "\nCreator: "  +CREATOR.toString();
         assertEquals(testObject.getSummary(),result);
     }
 }

@@ -2,6 +2,7 @@ package org.example.model;
 
 import jdk.nashorn.internal.ir.IfNode;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class Person {
@@ -9,18 +10,21 @@ public class Person {
     private String firstName;
     private String lastName;
     private String email;
+    private AppUser credentials;
 
     public Person() {
     }
 
     //Constructor
-    public Person(int personId,String firstName,String lastName,String email){
+    public Person(int personId,String firstName,String lastName,String email,AppUser credentials){
 
         if (personId <=0) throw  new RuntimeException();
         this.personId=personId;
         setFirstName(firstName);
         setLastName(lastName);
         setEmail(email);
+        setCredentials(credentials);
+
     }
 
 
@@ -55,11 +59,34 @@ public class Person {
         this.email = email;
     }
 
-    public String getSummary(){
+    public AppUser getCredentials() {
+        return credentials;
+    }
+
+    public void setCredentials(AppUser credentials) {
+        this.credentials = credentials;
+    }
+
+    @Override
+    public String toString(){
         return "\nPersonId: " + personId +
                 "\nFirstName: " + firstName +
                 "\nLastName: " + lastName +
-                "\nEmail: " + email;
+                "\nEmail: " + email +
+                "\n" + credentials;
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return personId == person.personId && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(personId, firstName, lastName, email);
     }
 }

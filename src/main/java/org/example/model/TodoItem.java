@@ -93,7 +93,7 @@ public class TodoItem {
                 "\nDeadline: " + deadLine +
                 "\nIsOverdue: "+ isOverdue()+
                 "\nDone: "+done +
-                "\nCreator: "  +creator.getSummary();
+                "\nCreator: "  +creator.toString();
 
     }
 }
