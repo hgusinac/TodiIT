@@ -1,9 +1,6 @@
-package org.example.model;
-
-import jdk.nashorn.internal.ir.IfNode;
+package org.example.Model;
 
 import java.util.Objects;
-import java.util.UUID;
 
 public class Person {
     private int personId;

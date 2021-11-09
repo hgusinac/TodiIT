@@ -1,8 +1,7 @@
-package org.example.model;
+package org.example.Model;
 
 import org.junit.Before;
 import org.junit.Test;
-import sun.util.resources.LocaleData;
 
 import java.time.LocalDate;
 

@@ -1,10 +1,6 @@
 package org.example;
 
-import org.example.model.*;
-import sun.util.resources.LocaleData;
-
-import java.applet.Applet;
-import java.time.LocalDate;
+import org.example.Model.*;
 
 
 /**

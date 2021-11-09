@@ -1,9 +1,7 @@
-package org.example.model;
+package org.example.Model;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.List;
 
 import static org.junit.Assert.*;
 

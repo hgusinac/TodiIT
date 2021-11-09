@@ -1,9 +1,6 @@
-package org.example.model;
-
-import sun.util.resources.LocaleData;
+package org.example.Model;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class TodoItem {
     private  int id;
